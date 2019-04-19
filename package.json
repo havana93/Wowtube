@@ -1,0 +1,11 @@
+{
+  "name": "wowtube",
+  "version": "1.0.0",
+  "description": " Cloning Wowtube with Vanilla and NodeJS",
+  "main": "index.js",
+  "author": "Kim Young Nam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
