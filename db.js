@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();//env를 불러오기위한 함수
 
 mongoose.connect(
-    process.env.MONGO_URL,  //비밀화를 위한 연결.env에서 가져와서쓴거다.
+    process.env.MONGO_URL,  
     { 
         useNewUrlParser:true,
        useFindAndModify: false 
