@@ -60,7 +60,7 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.test
+
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -80,3 +80,4 @@ typings/
 # FuseBox cache
 .fusebox/
 package-lock.json
+uploads
