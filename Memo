@@ -1,0 +1,101 @@
+sever란?인터넷에 연결된 한 덩어리의 코드-url에 응답하고 접속을 허가하는 업무
+node:실시간 정보제공에 용이
+D장고:핀터레스트같은 데이터대량 저장에 용이
+<<<<<Express>>>>
+1.
+npm이란? Node Package Manager(중앙집중화의개념)
+         여기서 express라는 프레임워크를 사용한다.
+
+
+require의 역할: node module을 어딘가에서 가져온다.    
+
+
+2.
+const express = require("express");
+const app = express();               :const라고 선언한 app이라는 변수에 express를 실행해서 담음.
+
+
+app.listen(PORT, handleListening)  = express로 호출하고,어플리케이션에게 4000번 포트를 리슨하게함.리스닝
+                                     하기시작할때  handleListening라는 함수를 실행.
+
+
+3.
+global하다.= 코딩전체에 적용된다.
+get: URL에 접근
+post: 정보를 전송하는 방식.(비밀성)
+
+req(request object)-어떤종류의 데이터가 페이지로 전송됐는지 암.(ex 아이디.패스워드를 req를 통해 파악가능)
+res(response object)-접속자에게 정보를 전송.
+
+babel: 코드를 최신걸로 변환.
+const express = require("express") ->>>  import express from "express";
+
+dependency: project 실행에 필요한것
+nodemon: 자동새로고침.
+morgan-logging: 무슨일이 일어났는지 기억함.
+yarn: npm의 대체제
+helmet: 보안
+body-parser: 사용자가 웹사이트로 전달하는 정보들을 검사하는 미들웨어.(req,form{아바타사진,비디오,댓글},json 형태의body 검사)
+cookie-parser: cookie를 전달받아서  유저정보를 저장할수있게끔 도와줌(ex 사용자인증)
+pug: html과 다른확장자,템플릿언어
+
+4.
+middleware: 유저가 접속하고 마지막응답 중간.(bigining과 start의 사이)
+                  (./)        (함수)
+
+next();를 사용하는이유 미들웨어 함수실행후에 (req,res,next)중에 res가 발동할수있는 권한을 줌.
+
+MVC( Model,View(template,pug),Control)
+
+arrow function: 암시적  성격을 지닌다. but 대괄호{}를 적어주면 암시적 성격을 잃게되어서 return을 적어줘야함.
+               ex) lalla = () =>{ true; } ;
+
+
+[MongoDB]
+mongoose:자바스크립트의 코드를 작성하고싶을때 MongoDB로부터  어뎁터역할을해줌( node.js를 위한 object mondeling)
+dotenv: 데이터를 숨기고싶을때사용(ex github에 필터링해서올릭고싶을때)
+ref: "video" - id각각의 비디오를 원할때
+
+async: 너를기다려주는무언가. await은 async안에서만 사용가능.
+but 이렇게 실행해서 render로 넘어가면 에러가있는상태에서도 넘어갈수있기때문에 try,catch를 사용
+
+ex)
+async(req, res) => "자바스크립트야 이 function의 어떤부분은 꼭 기다려야해." await부분이 끝나기전까지 render실행 ㄴㄴ
+const videos = await Video.find({}).sort({_id: -1});
+multar-//videofile의 URL을 반환하기위해(midleware종류의 함수),
+enctype:비디오 파일을 보내야하기때문에 form의encoding이 달라야함//
+
+
+
+videodetail=//id의값을 받기위해 routes.js에서도 수정을 해줬다.
+videodetail= `/${}`를해주는이유는 동영상을 아마존서버에저장후 거기서 불러오는것이기때문이다
+
+home://비디오블락의 비디오.타이틀
+     //videoBlock에서 끌어오니 순서상관없이 기입된거임.
+
+
+editVideo: 끝에 value 값이 들어간이유- 처음 이디트비디오에 들어갔을때 건들기전 기본값을 동영상 타이틀,디스크립션을 넣은상태로 만들고싶었나봄.
+모든 pug의 값은 model의 video값에서 가져온거엿다^^시발
+
+linter: 틀린걸 알려주는친구.
+
+regular expression: string으부터 무언가를 가져오는것.
+
+
+
+[Wep Pack]
+weppack: 우리가 파일을주면 완전히 호환이되는 static파일들로 변환해서 줌
+//server코드와는 연관 ㄴㄴ,100% client code
+entry: file이 어디서왔는가
+output:그것을 어디에 넣을것인가
+path:는 Node.js에 기본으로 깔려있는 패키지다.
+
+webpack.config.js-  const path = require("path");    //웹펙js는 모던 자바스크립트파일이 아니라서, import( ex)import from "path") 를 쓸수없다
+__dirname: 현재의 프로젝트 디렉토리 이름.어디서든 접근가능한 Node.js전역변수
+그 옆에는 경로쓴 거임.
+
+ test: /＼(.scss)$/     //정규식이라 부호가 저럼. scss인 파일들을 전부찾아주는역할.\
+
+
+ [CSS]
+ /flex :각자 따로의 라는 성질을 부여///
